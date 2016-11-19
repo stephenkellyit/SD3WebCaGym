@@ -27,4 +27,8 @@ public class HomeController extends Controller {
       public Result membership() {
         return ok(membership.render());
        }
+       public Result products() {
+        return ok(products.render());
+       }
+
 }

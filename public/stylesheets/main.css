@@ -18,6 +18,17 @@
   background-color:#F6F6F6;
 }
 
+#dropcolor{
+ background-color: #292c2f;
+color: #fff;
+}
+#dropcolor a{
+color: #fff;
+}
+#dropcolor a:hover{
+color: #292c2f;
+}
+
 #myCarousel img{
   width: 100%;
   

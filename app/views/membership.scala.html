@@ -1,57 +1,4 @@
-<!DOCTYPE HTML>
-
-<html>
-
-<head>
- <title>Average Joes</title>
-		<meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/style.css" />
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-                <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-                <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/footer.css")">
-	        <link rel="shortcut icon" type="image/jpg" href="@routes.Assets.versioned("images/ajgym3.jpg")">
-	        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-</head>
-
-<body>
-
-  <div id="container">
-    <nav class="navbar navbar-inverse" style="background-color: #292c2f; border-radius: 0;">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-          <a class="navbar-brand" href="index.html">
-        <p style="color: #fff;">Average Joes</p>
-      </a>
-        </div>
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-             <li><a href="/">Home</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/membership">Gym Membership</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="active"><a href="products.html">Protein</a></li>
-            <li><a href="products2.html">Gym Gear</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+@main("Membership"){
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
@@ -69,7 +16,7 @@
             <img src="@routes.Assets.versioned("images/ajgym2.5.jpg")">
             <div class="carousel-caption">
               <h3>Fully equiped Weight Room</h3>
-              <p>For whatever your goals are </p>
+              <h4>For whatever your goals are </h4>
             </div>
           </a>
         </div>
@@ -79,7 +26,7 @@
             <img src="@routes.Assets.versioned("images/ajgym1.JPG")">
             <div class="carousel-caption">
               <h3>Our new Cardio Room</h3>
-              <p>Everything cardio you could ever need</p>
+              <h4>Everything cardio you could ever need</h4>
             </div>
           </a>
         </div>
@@ -90,7 +37,7 @@
             <img src="@routes.Assets.versioned("images/ajpoolpic1.1.jpg")">
             <div class="carousel-caption">
               <h3>Swimming Pool</h3>
-              <p>Sauna, Hot tub, aqua classes</p>
+              <h4>Sauna, Hot tub, aqua classes</h4>
             </div>
           </a>
         </div>
@@ -102,7 +49,7 @@
 
               <h3>Excellent Classes</h3>
 
-              <p>Join one of our trainers for a group workout</p>
+              <h4>Join one of our trainers for a group workout</h4>
             </div>
           </a>
         </div>
@@ -178,6 +125,7 @@
             <strong>Get in touch: </strong>
             <br><abbr title="Phone">P:</abbr>(123) 456-7890
             <br>
+            <abbr title="Email">E:</abbr> <a href="mailto:#">averagejoes@@gmail.com</a>
             
 
           </address>
@@ -205,112 +153,112 @@
             </thead>
             <tbody>
               <tr>
-                <td data-title="      ">07:45 |1| 08:35</td>
+                <td data-title="      ">07:45 || 08:35</td>
                 <td data-title="Monday - Friday">Performance Training</td>
                 <td data-title="Saturday">-  </td>
                 <td data-title="Sunday">-  </td>
                 
               </tr>
               <tr>
-                <td data-title="      ">08:35 |2| 09:25</td>
+                <td data-title="      ">08:35 || 09:25</td>
                 <td data-title="Monday - Friday">Aqua</td>
                 <td data-title="Saturday">- </td></td>
                 <td data-title="Sunday">- </td></td>
                
               </tr>
               <tr>
-                <td data-title="      ">09:30 |3| 10:20</td>
+                <td data-title="      ">09:30 || 10:20</td>
                 <td data-title="Monday - Friday">TRX step</td>
                 <td data-title="Saturday">FitSteps</td>
                 <td data-title="Sunday">Spin+Pump</td>
                
               </tr>
               <tr>
-                <td data-title="      ">10:35 |4| 11:25</td>
+                <td data-title="      ">10:35 || 11:25</td>
                 <td data-title="Monday - Friday">Aqua</td>
                 <td data-title="Saturday">- </td></td>
                 <td data-title="Sunday">Aqua</td>
                 
               </tr>
               <tr>
-                <td data-title="      ">11:30 |5| 12:20</td>
+                <td data-title="      ">11:30 || 12:20</td>
                 <td data-title="Monday - Friday">- </td>
                 <td data-title="Saturday">Aqua</td>
                 <td data-title="Sunday">Fightclub Combo</td>
                 
               </tr>
               <tr>
-                <td data-title="      ">12:20 |6| 13:10</td>
+                <td data-title="      ">12:20 || 13:10</td>
                 <td data-title="Monday - Friday">ABS Blast</td>
                 <td data-title="Saturday">Fightclub Combo</td>
                 <td data-title="Sunday">- </td>
                 
               </tr>
               <tr>
-                <td data-title="      ">13:10 |7| 14:00</td>
+                <td data-title="      ">13:10 || 14:00</td>
                 <td data-title="Monday - Friday">Mega Mix</td>
                 <td data-title="Saturday">- </td>
                 <td data-title="Sunday">Performance Training</td>
                 
               </tr>
               <tr>
-                <td data-title="      ">14:00 |8| 14:50</td>
+                <td data-title="      ">14:00 || 14:50</td>
                 <td data-title="Monday - Friday">Performance Training</td>
                 <td data-title="Saturday">Mixed Circuit</td>
                 <td data-title="Sunday">ABS Blast</td>
                
               </tr>
               <tr>
-                <td data-title="      ">15:00 |9| 15:50</td>
+                <td data-title="      ">15:00 || 15:50</td>
                 <td data-title="Monday - Friday"> - </td>
                 <td data-title="Saturday">ABS Blast </td>
                 <td data-title="Sunday">TRX Kettlebells</td>
                 
               </tr>
               <tr>
-                <td data-title="      ">15:55 |10| 16:45 </td>
+                <td data-title="      ">15:55 || 16:45 </td>
                 <td data-title="Monday - Friday">Spin+Pump</td>
                 <td data-title="Saturday">Performance Training</td>
                 <td data-title="Sunday"></td>
                 
               </tr>
               <tr>
-                <td data-title="      ">16:50 |11| 17:40 </td>
+                <td data-title="      ">16:50 || 17:40 </td>
                 <td data-title="Monday - Friday">- </td>
                 <td data-title="Saturday">Zumba</td>
                 <td data-title="Sunday">Zumba</td>
                 
               </tr>
               <tr>
-                <td data-title="      ">17:40 |12| 18:30 </td>
+                <td data-title="      ">17:40 || 18:30 </td>
                 <td data-title="Monday - Friday">Aqua</td>
                 <td data-title="Saturday">-</td>
                 <td data-title="Sunday">- </td>
                 
               </tr>
               <tr>
-                <td data-title="      ">18:55 |13| 19:40 </td>
+                <td data-title="      ">18:55 || 19:40 </td>
                 <td data-title="Monday - Friday">Performance Training</td>
                 <td data-title="Saturday">FitSteps</td>
                 <td data-title="Sunday">Spin+Pump</td>
              
               </tr>
               <tr>
-                <td data-title="      ">19:40 |14| 20:25 </td>
+                <td data-title="      ">19:40 || 20:25 </td>
                 <td data-title="Monday - Friday">Mega Mix</td>
                 <td data-title="Saturday">- </td>
                 <td data-title="Sunday">- </td>
                 
               </tr>
               <tr>
-                <td data-title="      ">20:30 |15| 21:15 </td>
+                <td data-title="      ">20:30 || 21:15 </td>
                 <td data-title="Monday - Friday">- </td>
                 <td data-title="Saturday">- </td>
                 <td data-title="Sunday">- </td>
                 
               </tr>
               <tr>
-                <td data-title="      ">21:00 |16| 21:45 </td>
+                <td data-title="      ">21:00 || 21:45 </td>
                 <td data-title="Monday - Friday">Fight club</td>
                 <td data-title="Saturday">- </td>
                 <td data-title="Sunday">- </td>
@@ -320,66 +268,5 @@
           </table>
         </div>
       </div>
-    </div>
-
-
-
-
-    <footer class="footer-distributed">
-
-      <div class="footer-left">
-
-        <img src="@routes.Assets.versioned("images/averageJoesS.png")">
-
-        <p class="footer-links">
-          <a href="#">Home</a> ·
-          <a href="#">About Us</a> ·
-          <a href="#">Membership</a> ·
-          <a href="#">Products</a> ·
-          <a href="#">Joe's Online</a> ·
-          
-        </p>
-
-        <p class="footer-company-name">Average Joes &copy; 2016</p>
-      </div>
-
-      <div class="footer-center">
-
-        <div>
-          <i class="fa fa-map-marker"></i>
-          <p><span>Unit 12 Nazeing Glass Ind Est</span> Broxbourne EN10 6SU, USA</p>
-        </div>
-
-        <div>
-          <i class="fa fa-phone"></i>
-          <p>(123) 456-7890</p>
-        </div>
-
-       
-
-      </div>
-
-      <div class="footer-right">
-
-        <p class="footer-company-about">
-          <span>About the company</span> Average Joes offers the best atmosphere and equipment for any powerlifting, olympic lifting, body building, recreational
-            weightlifting, cross training or general fitness.
-        </p>
-
-        <div class="footer-icons">
-
-          <a href="#"><i class="fa fa-facebook"></i></a>
-          <a href="#"><i class="fa fa-twitter"></i></a>
-          <a href="#"><i class="fa fa-linkedin"></i></a>
-          <a href="#"><i class="fa fa-github"></i></a>
-
-        </div>
-
-      </div>
-
-    </footer>
-  </div>
-
-</body>
-
-</html>
+    
+}

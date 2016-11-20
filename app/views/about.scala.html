@@ -1,57 +1,4 @@
-<!DOCTYPE HTML>
-
-<html>
-	<head>
-		<title>Average Joes</title>
-		<meta charset="utf-8" />
-                <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel="stylesheet" href="css/style.css" />
-                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-                <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-                <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/footer.css")">
-	        <link rel="shortcut icon" type="image/jpg" href="@routes.Assets.versioned("images/ajgym3.jpg")">
-	        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
-</head>
-
-<body>
-
-  <div id="container">
- <nav class="navbar navbar-inverse" style="background-color: #292c2f; border-radius: 0;">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a class="navbar-brand" href="index.html">
-        Average Joes
-      </a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-         <li><a href="/">Home</a></li>
-        <li><a href="/about">About Us</a></li>
-        <li><a href="/membership">Gym Membership</a></li>
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li class="active"><a href="products.html">Protein</a></li>
-            <li><a href="products2.html">Gym Gear</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="signUp.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
-
+@main("About"){
 
  <div class="container">
 
@@ -61,133 +8,96 @@
                 <h1 class="page-header">About Us
                     <small>It's Nice to Meet You!</small>
                 </h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint, explicabo dolores ipsam aliquam inventore corrupti eveniet quisquam quod totam laudantium repudiandae obcaecati ea consectetur debitis velit facere nisi expedita vel?</p>
+                <p>Here at Average Joe's we pride ourselves on having the best team around, Our goal is to give you the best possible gym experience and to provide a positive, friendly enviroment for every member of the Joe's family.</p>
             </div>
         </div>
 
-        <!-- Team Members Row -->
+       <!-- Team Members Row -->
         <div class="row">
             <div class="col-lg-12">
                 <h2 class="page-header">Our Team</h2>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic1.1.jpg")">
+                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic1.1.jpg")" alt="">
                 <h3>Peter La Fleur
-                    <small>Job Title</small>
+                    <small>CEO</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center aboutImg"  src="@routes.Assets.versioned("images/ajaboutpic2.jpg")">
+                <img class="img-circle img-responsive img-center aboutImg"  src="@routes.Assets.versioned("images/ajaboutpic2.jpg")" alt="">
                 <h3>Kate Veatch
-                    <small>Job Title</small>
+                    <small>Operations Manager</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic3.1.jpg")">
+                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic3.1.jpg")" alt="">
                 <h3>Justin
-                    <small>Job Title</small>
+                    <small>HR</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center aboutImg" src= "@routes.Assets.versioned("images/ajaboutpic4.1.jpg")">
+                <img class="img-circle img-responsive img-center aboutImg" src= "@routes.Assets.versioned("images/ajaboutpic4.1.jpg")" alt="">
                 <h3>Gordon
-                    <small>Job Title</small>
+                    <small>Sales</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic5.1.jpg")">
+                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic5.1.jpg")" alt="">
                 <h3>Owen
-                    <small>Job Title</small>
+                    <small>Reception</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a></p>
             </div>
             <div class="col-lg-4 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic6.1.jpg")">
+                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic6.1.jpg")" alt="">
                 <h3>Dwight
-                    <small>Job Title</small>
+                    <small>Accounting</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a></p>
             </div>
             <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic7.1.jpg")">
+                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic7.1.jpg")" alt="">
                 <h3>Steve
-                    <small>Job Title</small>
+                    <small>Trainer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a></p>
             </div>
             <div class="col-lg-6 col-sm-6 text-center">
-                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic8.1.jpg")">
+                <img class="img-circle img-responsive img-center aboutImg" src="@routes.Assets.versioned("images/ajaboutpic8.1.jpg")" alt="">
                 <h3>Patches O'Houlihan
-                    <small>Job Title</small>
+                    <small>Trainer</small>
                 </h3>
-                <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+                <p>
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a></p>
             </div>
         </div>
+   
+}
 
-
-    </div>
-
-<footer class="footer-distributed">
-
-			<div class="footer-left">
-
-				<img src="@routes.Assets.versioned("images/averageJoesS.png")">
-
-				<p class="footer-links">
-					<a href="/">Home</a>
-					·
-					<a href="/about">About Us</a>
-					·
-					<a href="#">Membership</a>
-					·
-					<a href="#">Products</a>
-					·
-					<a href="#">Joe's Online</a>
-					·
-					<a href="#">Contact Us</a>
-				</p>
-
-				<p class="footer-company-name">Average Joes &copy; 2016</p>
-			</div>
-
-			<div class="footer-center">
-
-				<div>
-					<i class="fa fa-map-marker"></i>
-					<p><span>21 Revolution Street</span> Cincinnati, Usa</p>
-				</div>
-
-				<div>
-					<i class="fa fa-phone"></i>
-					<p>+1 555 123456</p>
-				</div>
-
-				
-
-			</div>
-
-			<div class="footer-right">
-
-				<p class="footer-company-about">
-					<span>About the company</span>
-					Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
-				</p>
-
-				<div class="footer-icons">
-
-					<a href="#"><i class="fa fa-facebook"></i></a>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-					<a href="#"><i class="fa fa-github"></i></a>
-
-				</div>
-
-			</div>
-
-		</footer>
-</body>
-</html>

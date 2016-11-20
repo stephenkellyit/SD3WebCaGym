@@ -12,7 +12,7 @@
   <div class="carousel-inner" role="listbox">
     <div class="item active">
       <a href="#">
-      <img src="@routes.Assets.versioned("images/ajgym3.1.jpg")">
+      <img src="@routes.Assets.versioned("images/ajPS1.jpg")">
       <div class="carousel-caption">
         <h3>Welcome to Average Joes</h3>
         <p> The Gym for Everyone. </p>
@@ -21,7 +21,7 @@
     </div>
 
      <div class="item">
-       <a href="#">
+       <a href="@routes.HomeController.membership()">
       <img src="@routes.Assets.versioned("images/ajgym2.4.jpg")">
       <div class="carousel-caption">
         <h3>Join Us Today</h3>
@@ -32,7 +32,7 @@
 
 
     <div class="item">
-      <a href="#">
+      <a href="@routes.HomeController.about()">
       <img src="@routes.Assets.versioned("images/ajpic5.1.jpg")">
       <div class="carousel-caption">
         <h3>Our Team</h3>
@@ -42,7 +42,7 @@
     </div>
 
 <div class="item">
-  <a href="#">
+  <a href="@routes.HomeController.products()">
       <img src="@routes.Assets.versioned("images/ajshop2.jpg")">
       <div class="carousel-caption">
         
@@ -73,20 +73,19 @@
 
         <div class="row">
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px" src="@routes.Assets.versioned("images/ajgym8.jpg")">
+                <a href="@routes.HomeController.membership()"><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px" src="@routes.Assets.versioned("images/ajgym8.jpg")"></a>
                 <h2 class="text-center">Membership</h2>
-                <p>Average Joes offers the best atmosphere and equipment for any powerlifting, Olympic lifting, body building, recreational
-            weightlifting, cross training or general fitness. The Average Joes family would love to meet you and we welcome you to workout with us soon!</p>
+                <p class="text-center">Average Joes offers the best atmosphere and equipment for any gym goer. The Average Joes family would love to have you join us</p>
             </div>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px;" src="@routes.Assets.versioned("images/ajshoppic3.jpg")">
+                <a href="@routes.HomeController.products()"><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px;" src="@routes.Assets.versioned("images/ajshoppic3.jpg")"></a>
                 <h2 class="text-center">Products</h2>
-                <p>The images are set to be circular and responsive. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <p class="text-center">View our great range of products, with the very best gym equipment, Suppilments and our Average Joes Clothing</p>
             </div>
             <div class="col-sm-4">
-                <img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px" src="@routes.Assets.versioned("images/averageJoes.png")">
+                <a href=#><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px" src="@routes.Assets.versioned("images/averageJoes.png")"></a>
                 <h2 class="text-center">Joe's Online</h2>
-                <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>
+                <p class="text-center">Be sure to check out Joe's Online, Where you can join the community of Joe's around the world</p>
             </div>
         </div>
         <!-- /.row -->

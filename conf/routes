@@ -19,6 +19,11 @@ GET     /clothing                  controllers.HomeController.clothing
 
 GET     /supplements                    controllers.HomeController.supplements 
 
+GET     /login                  controllers.HomeController.login
+
+GET     /signUp                  controllers.HomeController.signUp 
+
+
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code

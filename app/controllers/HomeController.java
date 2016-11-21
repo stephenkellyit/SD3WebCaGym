@@ -39,6 +39,12 @@ public class HomeController extends Controller {
        public Result supplements() {
         return ok(supplements.render());
        }
+       public Result login() {
+        return ok(login.render());
+       }
+       public Result signUp() {
+        return ok(signUp.render());
+       }
 
 
 }

@@ -30,5 +30,15 @@ public class HomeController extends Controller {
        public Result products() {
         return ok(products.render());
        }
+      public Result equipment() {
+        return ok(equipment.render());
+       }
+       public Result clothing() {
+        return ok(clothing.render());
+       }
+       public Result supplements() {
+        return ok(supplements.render());
+       }
+
 
 }

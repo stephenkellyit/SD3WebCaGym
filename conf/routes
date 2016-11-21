@@ -13,6 +13,12 @@ GET     /membership                     controllers.HomeController.membership
 
 GET     /products                    controllers.HomeController.products
 
+GET     /equipment                   controllers.HomeController.equipment
+
+GET     /clothing                  controllers.HomeController.clothing
+
+GET     /supplements                    controllers.HomeController.supplements 
+
 # An example controller showing how to use dependency injection
 GET     /count                      controllers.CountController.count
 # An example controller showing how to write asynchronous code

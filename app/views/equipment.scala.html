@@ -1,3 +1,5 @@
+@(products: List[models.Product])
+
 @main("Products"){
        
         <div class="container">
@@ -46,15 +48,19 @@
                 </div>
 
                 <div class="row">
+                @for(p <- products) {
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://images.costco-static.com/ImageDelivery/imageService?profileId=12026539&imageId=251794-894__1&recipeName=350" alt="">
                             <div class="caption">
-                                <h3 class="pull-right">€150.00</h3>
-                                <h3><a href="#">Boxing Equipment</a>
+                                <h3 class="pull-right">&euro; @("%.2f".format(p.getPrice))</h3>
+                                <h3><a href="#">@p.getId</a>
                                 </h3>
-                                <p>See more snippets like this online store item at </p>
+                                <h3><a href="#">@p.getName</a>
+                                </h3>
+                                <p>@p.getDescription</p>
+                                <p>@p.getStock</p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">15 reviews</p>
@@ -69,7 +75,9 @@
                         </div>
                     </div>
 
-                    <div class="col-sm-4 col-lg-4 col-md-4">
+                }
+
+                        <!--  <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://www.vulcanstrength.com//v/vspfiles/photos/HXDX-2-2T.jpg" alt="">
                             <div class="caption">
@@ -180,7 +188,7 @@
                                 </p>
                             </div>
                         </div>
-                    </div>
+                    </div>  -->
 
                    
 

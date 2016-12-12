@@ -6,48 +6,140 @@
 <html lang="en">
     <head>
         @* Here's where we render the page title `String`. *@
-        <title>@title</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-        <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
-        <link rel="shortcut icon" type="image/png" href="@routes.Assets.versioned("images/favicon.png")">
+       <title>@title</title>
+		<meta charset="utf-8" />
+                <meta name="viewport" content="width=device-width, initial-scale=1">
+		
+                <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+                <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/main.css")">
+                <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/footer.css")">
+
+
+
+	        <link rel="shortcut icon" type="image/jpg" href="@routes.Assets.versioned("images/averageJoesS.png")">
+
+	        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+
+        <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+
+<script src="@routes.Assets.versioned("javascripts/main.js")" type="text/javascript"></script>
+
+<script src="@routes.Assets.versioned("javascripts/login.js")" type="text/javascript"></script>
+
+<script src="@routes.Assets.versioned("javascripts/signUp.js")" type="text/javascript"></script>
     </head>
+    
     <body>
     <!-- start of nav section -->
-    <nav class="navbar navbar-inverse">
-            <!-- nav header/ branding -->
-            <div class="navbar-header">
-                <a class="navbar-brand" href="/admin/products">Product Admin</a>
-            </div>
-            <!-- List containing nav links -->
-            <ul class="nav navbar-nav">
-                <li @if(title == "Products"){class="active"}>
-                    <a href="@routes.AdminController.products()">Products</a>
-                </li>
-                <!-- Login/ Logout  Link - Check if user logged in-->
-                <li @if(title == "Login"){class="active"}>
+    
+  <div id="container">
+  <nav class="navbar navbar-inverse navbar-custom" style="background-color: #292c2f; border-radius: 0;" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="@routes.HomeController.index()">
+        <p style="color: #fff;">Average Joes</p>
+      </a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+         <li><a href="@routes.HomeController.index()">Home</a></li>
+        <li><a href="@routes.HomeController.about()">About Us</a></li>
+        <li><a href="@routes.HomeController.membership()">Gym Membership</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Products</a>
+          <ul class="dropdown-menu" id="dropcolor">
+            <li><a href="@routes.HomeController.equipment()">Gym Equipment</a></li>
+            <li><a href="@routes.HomeController.clothing()">Gym Clothing</a></li>
+            <li><a href="@routes.HomeController.supplements()">Supplements
+</a></li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+
+<li @if(title == "Login"){class="active"}>
                     @if(user != null) {
-                        <a href="@controllers.security.routes.LoginController.logout()">Logout @user.getName()</a>
+                        <a href="@controllers.security.routes.LoginController.logout()"><span class="glyphicon glyphicon-user"></span>Logout @user.getName()</a>
                     } else {
-                        <a href="@controllers.security.routes.LoginController.login()">Login</a>
+                        <a href="@controllers.security.routes.LoginController.login()"><span class="glyphicon glyphicon-log-in"></span>Login</a>
                     }
                 </li>
-            </ul>
-    </nav>
-    
-    <div class="container-fluid">
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
         @* And here's where we render the `Html` object containing
          * the page content. *@
         @content
-    </div>
-    <footer class="container-fluid">
-         <p></p>
-     </footer>
 
-    </body>
-    <!-- Load JavaScript libs last -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="@routes.Assets.versioned("javascripts/hello.js")" type="text/javascript"></script>
+  </div>
+ <footer class="footer-distributed">
+
+      <div class="footer-left">
+
+        <img src="@routes.Assets.versioned("images/averageJoesS.png")">
+
+        <p class="footer-links">
+          <a href="@routes.HomeController.index()">Home</a> ·
+          <a href="@routes.HomeController.about()">About Us</a> ·
+          <a href="@routes.HomeController.membership()">Membership</a> ·
+          <a href="@routes.HomeController.products()">Products</a> ·
+          <a href="@routes.HomeController.signUp()">Joe's Online</a> ·
+          
+        </p>
+
+        <p class="footer-company-name">Average Joes &copy; 2016</p>
+      </div>
+
+      <div class="footer-center">
+
+        <div>
+          <i class="fa fa-map-marker"></i>
+          <p><span>Unit 12 Nazeing Glass Ind Est</span> Broxbourne EN10 6SU, Ireland</p>
+        </div>
+
+        <div>
+          <i class="fa fa-phone"></i>
+          <p>(123) 456-7890</p>
+        </div>
+
+        <div>
+          <i class="fa fa-envelope"></i>
+          <p><a href="mailto:support@@company.com">averagejoes@@gmail.com</a></p>
+        </div>
+
+      </div>
+
+      <div class="footer-right">
+
+        <p class="footer-company-about">
+          <span>About the company</span> Average Joes offers the best atmosphere and equipment for any powerlifting, olympic lifting, body building, recreational
+            weightlifting, cross training or general fitness.
+        </p>
+
+        <div class="footer-icons">
+
+          <a href="#"><i class="fa fa-facebook"></i></a>
+          <a href="#"><i class="fa fa-twitter"></i></a>
+          <a href="#"><i class="fa fa-linkedin"></i></a>
+          
+
+        </div>
+
+      </div>
+
+    </footer>
+  </div>
+  
+</body>
 </html>
-

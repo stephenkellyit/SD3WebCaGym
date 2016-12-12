@@ -1,8 +1,9 @@
 @(products: List[models.Product], categories: List[models.Category], user: models.users.User, env: play.api.Environment)
 
-@main("Products", user){
-       
-        <div class="container">
+<!-- Pass page title and content {html between braces} to the main view -->
+@admin.adminMain("Products", user) {
+  <!-- HTML content for the index view -->
+ <div class="container">
 
           @if(flash.containsKey("success")) {
               <div class="alert alert-success">
@@ -81,6 +82,7 @@
                     } else {
                         <img src="/assets/images/productImages/thumbnails/noImage.png"/>
                     }
+
                             <div class="caption">
                                 <h3 class="pull-right">&euro; @("%.2f".format(p.getPrice))</h3>
                                 <h3><a href="#">@p.getId</a>
@@ -101,6 +103,16 @@
                                     <span class="glyphicon glyphicon-star"></span>
                                 </p>
 
+<p>
+ <a href="@routes.AdminController.updateProduct(p.getId)" class="btn-xs btn-danger">
+                      <span class="glyphicon glyphicon-pencil"></span></a>
+
+</p>
+<p>
+<a href="@routes.AdminController.deleteProduct(p.getId)" class="btn-xs btn-danger"
+                        onclick="return confirmDel();">
+                        <span class="glyphicon glyphicon-trash"></span>
+                      </a></p>
                             </div>
                         </div>
                     </div>
@@ -113,14 +125,22 @@
 
                 </div>
               
-
+             <p>
+          <a href="@routes.AdminController.addProduct()">
+            <button class="btn btn-primary">Add a Product</button>
+          </a>
+        </p>
 
             </div>
 
         </div>
 
- 
+      <script>
+    // JavaScript function returns true if user clicks yes, otherwise, false
+    function confirmDel() {
+        return confirm('Are you sure?');
+    }
+  </script>
    
     }
     
-  

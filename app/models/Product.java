@@ -3,12 +3,9 @@ package models;
 import java.util.*;
 import javax.persistence.*;
 
-//import com.avaje.ebean.Model;
+import com.avaje.ebean.Model;
 import play.data.format.*;
 import play.data.validation.*;
-
-
-import com.avaje.ebean.*;
 
 // Product Entity managed by the ORM
 @Entity
@@ -23,8 +20,8 @@ public class Product extends Model {
     @Constraints.Required
     private String name;
 
-    @Constraints.Required
-    private String category;
+    @ManyToOne
+    private Category category;
 
     @Constraints.Required
     private String description;
@@ -96,11 +93,11 @@ public class Product extends Model {
         this.price = price;
     }
 
-    public String getCategory() {
+    public Category getCategory() {
         return category;
     }
 
-    public void setCategory(String category) {
+    public void setCategory(Category category) {
         this.category = category;
     }
 }

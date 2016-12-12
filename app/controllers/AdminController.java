@@ -2,23 +2,32 @@ package controllers;
 
 import controllers.security.AuthAdmin;
 import controllers.security.Secured;
-import play.mvc.*;
-import play.data.*;
+import play.data.Form;
+import play.data.FormFactory;
 import play.db.ebean.Transactional;
-import play.api.Environment;
-
+import play.mvc.*;
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
-import javax.inject.Inject;
+import play.api.Environment;
 
-import views.html.*;
-
-// Import models
+import views.html.admin.*;
 import models.*;
-import models.users.*;
+import models.users.User;
 
+import play.mvc.Http.*;
+import play.mvc.Http.MultipartFormData.FilePart;
+import java.io.File;
 
-public class HomeController extends Controller {
+// File upload and image editing dependencies
+import org.im4java.core.ConvertCmd;
+import org.im4java.core.IMOperation;
+
+// Require Login
+@Security.Authenticated(Secured.class)
+// Authorise user (check if admin)
+@With(AuthAdmin.class)
+public class AdminController extends Controller {
 
     // Declare a private FormFactory instance
     private FormFactory formFactory;
@@ -28,62 +37,18 @@ public class HomeController extends Controller {
 
     //  Inject an instance of FormFactory it into the controller via its constructor
     @Inject
-    public HomeController(FormFactory f, Environment e) {
-        this.env = e;
+    public AdminController(Environment e, FormFactory f) {
         this.formFactory = f;
+        this.env = e;
     }
 
-
-
-     // Method retuns the logged in user (or null)
+    // Method returns the logged in user (or null)
     private User getUserFromSession() {
         return User.getUserById(session().get("email"));
     }
 
 
-
-    public Result index() {
-        return ok(index.render(getUserFromSession()));
-    }
-
-    public Result about() {
-        return ok(about.render(getUserFromSession()));
-       }
-
-      public Result membership() {
-        return ok(membership.render(getUserFromSession()));
-       }
-
-       
-     public Result equipment() {
-        List<Product> productsList = Product.findAll();
-        
-        return ok(equipment.render(productsList, getUserFromSession()));
-       }
-
-       public Result clothing() {
-        return ok(clothing.render(getUserFromSession()));
-       }
-       public Result supplements() {
-        return ok(supplements.render(getUserFromSession()));
-       }
-       
-//public Result login() {
-       // return ok(login.render(getUserFromSession()));
-       //}
-       public Result signUp() {
-        return ok(signUp.render(getUserFromSession()));
-       }
-
-
-
-
-       public Result productsHome() {
-        return ok(productsHome.render(getUserFromSession()));
-       }
-
-
-   public Result products(Long cat) {
+    public Result products(Long cat) {
 
         // Get list of all categories in ascending order
         List<Category> categoriesList = Category.findAll();
@@ -102,23 +67,23 @@ public class HomeController extends Controller {
         return ok(products.render(productsList, categoriesList, getUserFromSession(), env));
     }
 
-
-
     // Render and return  the add new product page
     // The page will load and display an empty add product form
+
     public Result addProduct() {
 
         // Create a form by wrapping the Product class
         // in a FormFactory form instance
         Form<Product> addProductForm = formFactory.form(Product.class);
 
-        // Render the Add Product View, passing the form object   
-        return ok(addProduct.render(addProductForm, getUserFromSession()));
+        // Render the Add Product View, passing the form object
+        return ok(addProduct.render(addProductForm, getUserFromSession(), env));
     }
 
     @Transactional
     public Result addProductSubmit() {
 
+        String saveImageMsg;
         // Create a product form object (to hold submitted data)
         // 'Bind' the object to the submitted form (this copies the filled form)
         Form<Product> newProductForm = formFactory.form(Product.class).bindFromRequest();
@@ -126,7 +91,7 @@ public class HomeController extends Controller {
         // Check for errors (based on Product class annotations)
         if(newProductForm.hasErrors()) {
             // Display the form again
-            return badRequest(addProduct.render(newProductForm, getUserFromSession()));
+            return badRequest(addProduct.render(newProductForm, getUserFromSession(), env));
         }
 
         // Extract the product from the form object
@@ -141,17 +106,22 @@ public class HomeController extends Controller {
             p.update();
         }
 
+        // Save image
+        // Get image data
+        MultipartFormData data = request().body().asMultipartFormData();
+        FilePart image = data.getFile("upload");
+
+        // Save the image file
+        saveImageMsg = saveFile(p.getId(), image);
+
         // Set a success message in temporary flash
         // for display in return view
-        flash("success", "Product " + p.getName() + " has been created/ updated");
+        flash("success", "Product " + p.getName() + " has been created/ updated " + saveImageMsg);
 
         // Redirect to the admin home
-        return redirect(controllers.routes.HomeController.products(0));
+        return redirect(routes.AdminController.products(0));
     }
 
-
-    @Security.Authenticated(Secured.class)
-    @With(AuthAdmin.class)
     // Update a product by ID
     // called when edit button is pressed
     @Transactional
@@ -166,13 +136,13 @@ public class HomeController extends Controller {
 
             // Create a form based on the Product class and fill using p
             productForm = formFactory.form(Product.class).fill(p);
-        
+
             } catch (Exception ex) {
                 // Display an error message or page
                 return badRequest("error");
         }
         // Render the updateProduct view - pass form as parameter
-        return ok(addProduct.render(productForm, getUserFromSession()));
+        return ok(addProduct.render(productForm, getUserFromSession(), env));
     }
 
     // Delete Product by id
@@ -185,12 +155,47 @@ public class HomeController extends Controller {
         flash("success", "Product has been deleted");
 
         // Redirect to products page
-        return redirect(routes.HomeController.products(0));
+        return redirect(routes.AdminController.products(0));
     }
 
+    // Save an image file
+    public String saveFile(Long id, FilePart<File> image) {
+        if (image != null) {
+            // Get mimetype from image
+            String mimeType = image.getContentType();
+            // Check if uploaded file is an image
+            if (mimeType.startsWith("image/")) {
+                // Create file from uploaded image
+                File file = image.getFile();
+                // create ImageMagick command instance
+                ConvertCmd cmd = new ConvertCmd();
+                // create the operation, add images and operators/options
+                IMOperation op = new IMOperation();
+                // Get the uploaded image file
+                op.addImage(file.getAbsolutePath());
+                // Resize using height and width constraints
+                op.resize(300,200);
+                // Save the  image
+                op.addImage("public/images/productImages/" + id + ".jpg");
+                // thumbnail
+                IMOperation thumb = new IMOperation();
+                // Get the uploaded image file
+                thumb.addImage(file.getAbsolutePath());
+                thumb.thumbnail(60);
+                // Save the  image
+                thumb.addImage("public/images/productImages/thumbnails/" + id + ".jpg");
+                // execute the operation
+                try{
+                    cmd.run(op);
+                    cmd.run(thumb);
+                }
+                catch(Exception e){
+                    e.printStackTrace();
+                }
+                return " and image saved";
+            }
+        }
+        return "image file missing";
+    }
 
 }
-
-
-
-

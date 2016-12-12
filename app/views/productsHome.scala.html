@@ -1,0 +1,37 @@
+@(user: models.users.User)
+@main("Products",user){
+
+        <div class="container">
+
+            <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Products
+                    <small>Get your Average Joes Gear Today</small>
+                </h1>
+                <p>View our great range of products, with the very best gym equipment, Suppilments and our Average Joes Clothing</p>
+            </div>
+        </div>
+        <br>
+        <br>
+
+       <div class="row">
+            <div class="col-sm-4">
+                <a href="@routes.HomeController.equipment()"><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px" src="http://images.costco-static.com/ImageDelivery/imageService?profileId=12026539&imageId=251794-894__1&recipeName=350")"></a>
+                <h2 class="text-center">Equipment</h2>
+                <p class="text-center"> </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="@routes.HomeController.clothing()"><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px;" src="@routes.Assets.versioned("images/ajshoppic3.jpg")"></a>
+                <h2 class="text-center">Clothing</h2>
+                <p class="text-center"> </p>
+            </div>
+            <div class="col-sm-4">
+                <a href="@routes.HomeController.supplements()"><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px" src="https://cdn.shopify.com/s/files/1/0811/0037/products/Scitec-Nutrition---Protein-Pancake-1036g_large.jpg?v=1469392038"></a>
+                <h2 class="text-center">Supplements</h2>
+                <p class="text-center">  </p>
+            </div>
+        </div>
+
+    }
+    
+  

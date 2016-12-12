@@ -1,6 +1,7 @@
-@(products: List[models.Product])
+@(products: List[models.Product], user: models.users.User) 
 
-@main("Products"){
+
+@main("Products", user){
        
         <div class="container">
         <div class="row">
@@ -98,7 +99,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="http://www.undisputedfightstore.com/user/products/large/BOXERS-LIGHTWEIGHT-NYLON-SPEED-ROPE-6FT.jpg" alt="">
@@ -120,7 +120,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="@routes.Assets.versioned("images/bench.jpg")" alt="">
@@ -142,7 +141,6 @@
                             </div>
                         </div>
                     </div>
-
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
                             <img src="https://s-media-cache-ak0.pinimg.com/originals/ba/6a/73/ba6a7371f37cc21f83f3bb95b7110c32.jpg" alt="">
@@ -199,5 +197,4 @@
         </div>
    
     }
-    
   

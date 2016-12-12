@@ -1,4 +1,6 @@
-@main("Home"){
+@(user: models.users.User)
+
+@main("Home", user){
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">

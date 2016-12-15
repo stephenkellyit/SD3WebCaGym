@@ -48,6 +48,20 @@ public class AdminController extends Controller {
     }
 
 
+   public Result index() {
+        return ok(index.render(getUserFromSession()));
+    }
+
+    public Result about() {
+        return ok(about.render(getUserFromSession()));
+       }
+
+      public Result membership() {
+        return ok(membership.render(getUserFromSession()));
+       }
+
+
+
     public Result products(Long cat) {
 
         // Get list of all categories in ascending order

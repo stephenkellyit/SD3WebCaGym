@@ -1,0 +1,95 @@
+@(user: models.users.User)
+
+@main("Home", user){
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+    <li data-target="#myCarousel" data-slide-to="3"></li>
+  </ol>
+
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <a href="#">
+      <img src="@routes.Assets.versioned("images/ajPS1.jpg")">
+      <div class="carousel-caption">
+        <h3>Welcome to Average Joes</h3>
+        <p> The Gym for Everyone. </p>
+      </div>
+      </a>
+    </div>
+
+     <div class="item">
+       <a href="@routes.HomeController.membership()">
+      <img src="@routes.Assets.versioned("images/ajgym2.4.jpg")">
+      <div class="carousel-caption">
+        <h3>Join Us Today</h3>
+        <p>  </p>
+      </div>
+       </a>
+    </div>
+
+
+    <div class="item">
+      <a href="@routes.HomeController.about()">
+      <img src="@routes.Assets.versioned("images/ajpic5.1.jpg")">
+      <div class="carousel-caption">
+        <h3>Our Team</h3>
+        <p> </p>
+      </div>
+      </a>
+    </div>
+
+<div class="item">
+  <a href="@routes.HomeController.products()">
+      <img src="@routes.Assets.versioned("images/ajshop2.jpg")">
+      <div class="carousel-caption">
+        
+        <h3></h3>
+        
+        <p></p>
+      </div>
+  </a>
+    </div>
+    
+  </div>
+
+  <!-- Left and right controls -->
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+
+  <div class="container">
+ 
+
+        <hr>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <a href="@routes.HomeController.membership()"><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px" src="@routes.Assets.versioned("images/ajgym8.jpg")"></a>
+                <h2 class="text-center">Membership</h2>
+                <p class="text-center">Average Joes offers the best atmosphere and equipment for any gym goer. The Average Joes family would love to have you join us</p>
+            </div>
+            <div class="col-sm-4">
+                <a href="@routes.HomeController.products()"><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px;" src="@routes.Assets.versioned("images/ajshoppic3.jpg")"></a>
+                <h2 class="text-center">Products</h2>
+                <p class="text-center">View our great range of products, with the very best gym equipment, Suppilments and our Average Joes Clothing</p>
+            </div>
+            <div class="col-sm-4">
+                <a href="@routes.HomeController.signUp()"><img class="img-circle img-responsive img-center" style="width: 80%; max-width: 300px" src="@routes.Assets.versioned("images/averageJoes.png")"></a>
+                <h2 class="text-center">Joe's Online</h2>
+                <p class="text-center">Be sure to check out Joe's Online, Where you can join the community of Joe's around the world</p>
+            </div>
+        </div>
+        <!-- /.row -->
+}
+

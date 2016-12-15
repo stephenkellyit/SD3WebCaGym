@@ -51,6 +51,12 @@ GET    /admin/delProduct/:id               controllers.AdminController.deletePro
 # Update a product by id
 GET	    /admin/updateProduct/:id        controllers.AdminController.updateProduct(id: Long)
 
+GET     /admin/                           controllers.AdminController.index
+
+GET     /admin/about                          controllers.AdminController.about
+
+GET     /admin/membership                     controllers.AdminController.membership
+
 
 
 ################

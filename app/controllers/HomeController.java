@@ -88,6 +88,7 @@ public class HomeController extends Controller {
         // Get list of all categories in ascending order
         List<Category> categoriesList = Category.findAll();
         List<Product> productsList = new ArrayList<Product>();
+        List<Review> reviewsList = new ArrayList<Review>();
 
         if (cat == 0) {
             // Get list of all categories in ascending order
@@ -99,7 +100,7 @@ public class HomeController extends Controller {
             productsList = Category.find.ref(cat).getProducts();
         }
 
-        return ok(products.render(productsList, categoriesList, getUserFromSession(), env));
+        return ok(products.render(productsList, categoriesList, getUserFromSession(), env, reviewsList));
     }
 
 

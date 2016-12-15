@@ -1,4 +1,4 @@
-@(products: List[models.Product], categories: List[models.Category], user: models.users.User, env: play.api.Environment)
+@(products: List[models.Product], categories: List[models.Category], user: models.users.User, env: play.api.Environment, reviews: List[models.Review])
 
 @main("Products", user){
        
@@ -80,14 +80,67 @@
                                
                             </div>
                             <div class="ratings">
-                                <p class="pull-right">15 reviews</p>
-                                <p>
+                                <p class="pull-right">@p.getReviews.size() Review(s) Rating: @("%.1f".format(p.getAvgStars()))</p>
+       
+       @if(p.getNumStars() == 5) {
+
+                                  <p>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
                                     <span class="glyphicon glyphicon-star"></span>
+                                    
                                 </p>
+                } 
+                
+                @if(p.getNumStars() == 4){
+                                 <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                    }
+                @if(p.getNumStars() == 3){
+                                 <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                    }
+                @if(p.getNumStars() == 2){
+                                 <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                    }
+                @if(p.getNumStars() == 1){
+                                 <p>
+                                    <span class="glyphicon glyphicon-star"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                    }   
+                @if(p.getNumStars() == 0){
+                                 <p>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                    <span class="glyphicon glyphicon-star-empty"></span>
+                                </p>
+                    }       
+
+                       
 
                             </div>
                         </div>

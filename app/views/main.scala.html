@@ -56,9 +56,9 @@
 
 <li @if(title == "Login"){class="active"}>
                     @if(user != null) {
-                        <a href="@controllers.security.routes.LoginController.logout()"><span class="glyphicon glyphicon-user"></span>Logout @user.getName()</a>
+                        <a href="@controllers.security.routes.LoginController.logout()"><span class="glyphicon glyphicon-user"></span> Logout @user.getName()</a>
                     } else {
-                        <a href="@controllers.security.routes.LoginController.login()"><span class="glyphicon glyphicon-log-in"></span>Login</a>
+                        <a href="@controllers.security.routes.LoginController.login()"><span class="glyphicon glyphicon-log-in"></span> Admin Login</a>
                     }
                 </li>
       </ul>
@@ -83,7 +83,7 @@
           <a href="@routes.HomeController.about()">About Us</a> ·
           <a href="@routes.HomeController.membership()">Membership</a> ·
           <a href="@routes.HomeController.products()">Products</a> ·
-          <a href="@routes.HomeController.signUp()">Joe's Online</a> ·
+          <a href="@controllers.security.routes.LoginController.login()">Joe's Online</a> ·
           
         </p>
 
